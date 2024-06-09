@@ -26,10 +26,10 @@ export default function Login() {
 
                      <section className="flex flex-col p-5">
                         <label className="font-medium mb-3 text-2xl" htmlFor="">cpf</label>
-                        <input className="mb-5 border rounded-md p-1 border-slate-900" type="text" name="" id="" />
+                        <input className="mb-5 border rounded-md p-1 border-slate-900 bg-slate-100" type="text" name="" id="" />
 
                         <label className="font-medium mb-3 text-2xl" htmlFor="">password</label>
-                        <input className="mb-5 border rounded-md p-1 border-slate-900" type="password" name="" id="" />
+                        <input className="mb-5 border rounded-md p-1 border-slate-900 bg-slate-100" type="password" name="" id="" />
 
                         <button className="font-semibold border w-28 p-1 rounded-lg self-center border-slate-700 bg-slate-800 text-slate-50" type="submit">send</button>
                      </section>
