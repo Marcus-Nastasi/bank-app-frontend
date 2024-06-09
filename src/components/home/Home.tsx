@@ -1,4 +1,4 @@
-function Home() {
+export default function Home() {
    return (
       <>
          <main style={grayBg} className="min-h-screen max-h-fit">
@@ -53,8 +53,6 @@ function Home() {
       </>
    );
 }
- 
-export default Home;
 
 const yellowBase: object = {
    backgroundColor: "#FFD84C"
