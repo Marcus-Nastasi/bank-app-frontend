@@ -7,9 +7,9 @@ function App() {
 
    return (
       <>
-         {/* <Home />  */}
-         <Card />
-         {/* <Login /> */}
+         {/* <Home /> */}
+         {/* <Card /> */}
+         <Login />
       </>
    )
 }

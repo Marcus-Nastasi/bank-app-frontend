@@ -22,7 +22,7 @@ export default function Home() {
 
             <section className="flex justify-center items-center w-screen h-24 mt-1">
                <section className="flex justify-evenly items-center w-10/12 h-4/6 rounded-xl bg-white">
-                  <p className="text-4xl">R$ *****,**</p>
+                  <p className="text-2xl">$ 0,00</p>
                   <img className="w-8 h-8" src="../assets/img/olho-vermelho.png" alt="" />
                </section>
             </section>
@@ -62,5 +62,4 @@ const grayBg: object = {
    backgroundColor: "#EEEEEE"
 }
 
- 
  

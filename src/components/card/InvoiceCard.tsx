@@ -12,7 +12,7 @@ export default function InvoiceCard({ invoice, number }) {
                   <p>$ {invoice}</p> 
                </div>
 
-               <div className="">
+               <div className=" font-medium">
                   <p>{number}</p>
                </div>
             </section>

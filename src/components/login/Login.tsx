@@ -1,4 +1,8 @@
+import { useState } from "react";
+
 export default function Login() {
+   const [ fetchError, setFetchError ] = useState<boolean>(false);
+   const [ errorMessage, setErrorMessage ] = useState<string>();
 
    async function handleSubmit(e: any): Promise<void> {
       e.preventDefault();
@@ -18,10 +22,21 @@ export default function Login() {
          const token: string = await req.text();
 
          localStorage.setItem('token', token);
+         
+         return;
       } catch(e) {
          console.log(e);
+         handleError(e);
       }
    };
+
+   function handleError(e): void {
+      setErrorMessage(e);
+      setFetchError(true);
+
+      setTimeout(() => setFetchError(false), 2000);
+      return;
+   }
 
    return(
       <>
@@ -42,6 +57,9 @@ export default function Login() {
                   </section>
                </section>
             </header>
+
+            {/* to-do: create html and css for error */}
+            {fetchError ? <> <p>error</p> </> : ''}
 
             <section className="flex justify-center items-center w-screen h-56 mt-16">
                <section className="flex flex-col justify-evenly items-center w-10/12 min-h-56 max-h-fit rounded-xl bg-white">
