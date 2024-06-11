@@ -43,7 +43,9 @@ export default function Home() {
 
                   <img src="../assets/img/icon-home.png" alt="" />
 
-                  <img src="../assets/img/icon-wallet.png" alt="" />
+                  <a href="/cards">
+                    <img src="../assets/img/icon-wallet.png" alt="" />
+                  </a>
 
                   <img src="../assets/img/icon-invest.png" alt="" />
 
