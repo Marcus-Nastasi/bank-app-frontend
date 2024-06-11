@@ -1,4 +1,28 @@
 export default function Login() {
+
+   async function handleSubmit(e: any): Promise<void> {
+      e.preventDefault();
+
+      const cpf: any = document.getElementById('inp_cpf');
+      const pass: any = document.getElementById('inp_pass');
+
+      const url: string = `http://localhost:8080/auth/login`;
+      const options: object = {
+         method: 'POST',
+         body: JSON.stringify({ cpf: cpf.value, password: pass.value }),
+         headers: new Headers({ 'content-type': 'application/json' })
+      };
+
+      try {
+         const req: Response = await fetch(url, options);
+         const token: string = await req.text();
+
+         localStorage.setItem('token', token);
+      } catch(e) {
+         console.log(e);
+      }
+   };
+
    return(
       <>
          <main style={grayBg} className="min-h-screen max-h-fit">
@@ -22,16 +46,21 @@ export default function Login() {
             <section className="flex justify-center items-center w-screen h-56 mt-16">
                <section className="flex flex-col justify-evenly items-center w-10/12 min-h-56 max-h-fit rounded-xl bg-white">
                   
-                  <form className="w-11/12" action="">
+                  <form className="w-11/12">
 
                      <section className="flex flex-col p-5">
                         <label className="font-medium mb-3 text-2xl" htmlFor="">cpf</label>
-                        <input className="mb-5 border rounded-md p-1 border-slate-900 bg-slate-100" type="text" name="" id="" />
+                        <input className="mb-5 border rounded-md p-1 border-slate-900 bg-slate-100" type="text" name="" id="inp_cpf" />
 
                         <label className="font-medium mb-3 text-2xl" htmlFor="">password</label>
-                        <input className="mb-5 border rounded-md p-1 border-slate-900 bg-slate-100" type="password" name="" id="" />
+                        <input className="mb-5 border rounded-md p-1 border-slate-900 bg-slate-100" type="password" name="" id="inp_pass" />
 
-                        <button className="font-semibold border w-28 p-1 rounded-lg self-center border-slate-700 bg-slate-800 text-slate-50" type="submit">send</button>
+                        <button
+                           onClick={handleSubmit}
+                           className="font-semibold border w-28 p-1 rounded-lg self-center border-slate-700 bg-slate-800 text-slate-50" 
+                           type="submit">
+                              send
+                        </button>
                      </section>
 
                   </form>
