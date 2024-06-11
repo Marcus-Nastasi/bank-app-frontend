@@ -1,8 +1,10 @@
+import InvoiceCard from "./InvoiceCard";
+
 export default function Card() {
    return(
       <>
          <main style={grayBg} className="min-h-screen max-h-fit">
-            <header style={yellowBase} className="w-screen h-32 rounded-b-3xl">
+            <header style={yellowBase} className="w-screen h-32 rounded-b-3xl fixed top-0">
                <section className="h-full flex justify-evenly items-center">
 
                   <section className="-ml-16 mt-2">
@@ -19,22 +21,13 @@ export default function Card() {
                </section>
             </header>
 
-            <section className="flex justify-center items-center w-screen h-56 mt-16">
-               <section className="flex flex-col justify-evenly items-center w-10/12 h-5/6 rounded-xl bg-white">
-                  <p>INVOICE</p>
-                  <p>R$ *****,**</p>
-                  <p>more...</p>
-                  <p>0000.0000.0000.0000</p>
-               </section>
-            </section>
+            <section className="py-40">
+               <InvoiceCard invoice={"1.234,50"} number={"0000.1234.4567.0000"} />
 
-            <section className="flex justify-center items-center w-screen h-56 mt-16">
-               <section className="flex flex-col justify-evenly items-center w-10/12 h-5/6 rounded-xl bg-white">
-                  <p>INVOICE</p>
-                  <p>R$ *****,**</p>
-                  <p>more...</p>
-                  <p>0000.0000.0000.0000</p>
-               </section>
+               <InvoiceCard invoice={"22.548,56"} number={"0000.1234.4567.0000"} />
+
+               <InvoiceCard invoice={"348,17"} number={"0000.1234.4567.0000"} />
+
             </section>
 
             <footer className="flex items-center fixed bottom-0 h-24 w-screen rounded-t-3xl bg-white">
