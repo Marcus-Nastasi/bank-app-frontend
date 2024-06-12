@@ -1,4 +1,8 @@
+import { useState } from "react";
+
 export default function Home() {
+   const [ user, setUser ] = useState('');
+
    return (
       <>
          <main style={grayBg} className="min-h-screen max-h-fit">
